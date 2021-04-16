@@ -19,3 +19,5 @@ CREATE TABLE `user` (
   `LAST_LOGIN` TIMESTAMP,
   PRIMARY KEY (`USER_ID`)
 );
+
+**Output Screenshots attached under output folder**
