@@ -52,10 +52,18 @@ public class UserController {
 
         return service.getUserById(id)
                 .map(User -> {
-                    User.setName(newUser.getName());
-                    User.setEmail(newUser.getEmail());
-                    User.setPassword(newUser.getPassword());
-                    User.setLastLoginTime(newUser.getLastLoginTime());
+                    if (newUser.getName() != null) {
+                        User.setName(newUser.getName());
+                    }
+                    if (newUser.getEmail() != null) {
+                        User.setEmail(newUser.getEmail());
+                    }
+                    if (newUser.getPassword() != null) {
+                        User.setPassword(newUser.getPassword());
+                    }
+                    if (newUser.getLastLoginTime() != null) {
+                        User.setLastLoginTime(newUser.getLastLoginTime());
+                    }
                     return service.save(User);
                 })
                 .orElseGet(() -> {
